@@ -215,7 +215,7 @@ function show_news(n){
 		button.remove() 
 	else
 		// Иначе, обновить кнопку и заменить данные
-		button.innerHTML = `Показать сообщения(${data.length - id_add_news.length})`	
+		button.innerHTML = 'Показать сообщения('+String(data.length - id_add_news.length)+')'	
 }
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -233,8 +233,8 @@ document.addEventListener('DOMContentLoaded', function(){
 			document.body.innerHTML = '<div class="widget"><h1 class="widget__h1">Новостная лента</h1></div>';
 			let button = document.createElement('button')
 			button.className = 'show-button'
-			button.setAttribute('onclick', `show_news(3)`)
-			button.innerHTML = 	`Показать сообщения(${data.length})`
+			button.setAttribute('onclick', 'show_news(3)')
+			button.innerHTML = 	'Показать сообщения('+String(data.length)+')'
 			document.getElementsByClassName('widget')[0].append(button)
 			show_news(3)
 			clearInterval(timeId)
