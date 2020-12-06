@@ -21,7 +21,7 @@ body, html{
 	    background: #fff;
 	}
 
-	.block-widget{
+	.widget__block{
 		background-color: #fff;
 		margin: 0 0 30px;
 		box-shadow: 0px 5px 10px rgb(0,0,0, 0.2);
@@ -32,49 +32,67 @@ body, html{
 		animation: show .5s 1;
 		animation-fill-mode: forwards;
 		animation-delay: 0;
-		}.widget__body{
+		}.widget__block__body{
 		    padding: 20px;
-		}.widget__body__head{
+		}.widget__block__body__head{
 
-			}.widget__body__head h1{
+			}.widget__block__body__head h2{
 				margin: 0;
 			}
-		.widget__body__content{
+		.widget__block__body__content{
 			margin: 25px 0 0;
 			padding: 20px 0;
 			border-top: 1px solid #ff8dcc;
     		border-bottom: 1px solid #ff8dcc;
 		}
-		.widget__body__footer{
+		.widget__block__body__footer{
 			display: flex;
 			justify-content: space-between;
 			flex-flow: row wrap;
-			}.widget__body__footer__author{
+			}.widget__block__body__footer__author{
 				display: flex;
 				align-items: center;
 				margin-top: 25px;
-				}.widget__body__footer__author__image{
+				}.widget__block__body__footer__author__image{
 					font-size: 36px;
     				margin-right: 10px;
 				}
-				.widget__body__footer__author__data-n-time{
+				.widget__block__body__footer__author__data-n-time{
 
 					}.data-n-time__first{
 
 					}.data-n-time__last{
 						margin-left: 15px;
 					}
-			.widget__body__footer__readed{
+			.widget__block__body__footer__readed{
 				margin-top: 25px;
-				}.widget__body__footer__readed span{
-				display: flex;
-			    align-items: center;
-			    justify-content: space-between;
-			    width: 110px;
-				}
-	.block-widget.active{
-		transform: scale(1);
+				}.widget__block__body__footer__readed span{
+					display: flex;
+				    align-items: center;
+				    justify-content: space-between;
+				    width: 110px;
+					}.widget__block__body__footer__readed span .fa-check-circle{
+						color: green;
+					}.widget__block__body__footer__readed span .fa-times-circle{
+						color: red;
+					}
+	.widget__show-button{
+		width: 100%;
+	    height: 40px;
+	    border-radius: 15px;
+	    background: #ff8fc8;
+	    border: 0;
+	    outline: 0;
+	    cursor: pointer;
+	    font-size: 16px;
+	    color: #ffecf8;
+	    transition: .5s;
 	}
+	.widget__show-button:hover{
+		background: #fff;
+		color: #ff8fc8;
+	}
+	
 .load{
 	position: fixed;
 	width: 100vw;
@@ -84,28 +102,8 @@ body, html{
 	justify-content: center;
 	align-items: center;
 }
-.show-button{
-	width: 100%;
-    height: 40px;
-    border-radius: 15px;
-    background: #ff8fc8;
-    border: 0;
-    outline: 0;
-    cursor: pointer;
-    font-size: 16px;
-    color: #ffecf8;
-    transition: .5s;
-}
-.show-button:hover{
-	background: #fff;
-	color: #ff8fc8;
-}
-.fa-check-circle{
-	color: green;
-}
-.fa-times-circle{
-	color: red;
-}
+
+
 
 
 @keyframes show{
