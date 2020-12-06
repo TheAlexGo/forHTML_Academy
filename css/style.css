@@ -37,7 +37,7 @@ body, html{
 				margin: 0;
 			}
 		.widget__body__content{
-			margin: 25px 0;
+			margin: 25px 0 0;
 			padding: 20px 0;
 			border-top: 1px solid #ff8dcc;
     		border-bottom: 1px solid #ff8dcc;
@@ -45,9 +45,11 @@ body, html{
 		.widget__body__footer{
 			display: flex;
 			justify-content: space-between;
+			flex-flow: row wrap;
 			}.widget__body__footer__author{
 				display: flex;
 				align-items: center;
+				margin-top: 25px;
 				}.widget__body__footer__author__image{
 					font-size: 36px;
     				margin-right: 10px;
@@ -59,12 +61,14 @@ body, html{
 					}.data-n-time__last{
 						margin-left: 15px;
 					}
-			.widget__body__footer__readed span{
+			.widget__body__footer__readed{
+				margin-top: 25px;
+				}.widget__body__footer__readed span{
 				display: flex;
 			    align-items: center;
 			    justify-content: space-between;
 			    width: 110px;
-			}
+				}
 	.block-widget.active{
 		transform: scale(1);
 	}
