@@ -54,6 +54,7 @@ body, html{
 				display: flex;
 				align-items: center;
 				margin-top: 25px;
+				min-width: 200px;
 				}.widget__block__body__footer__author__image{
 					font-size: 36px;
     				margin-right: 10px;
