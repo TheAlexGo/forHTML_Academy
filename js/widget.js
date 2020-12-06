@@ -191,7 +191,9 @@ function show_news(n){
 			let element = document.createElement('div')
 			element.className = 'widget__block'
 			element.innerHTML = card_news(data_card)
-			document.getElementsByClassName('widget__show-button')[0].before(element)
+			let block_widget = document.getElementsByClassName('widget')[0]
+			let button_widget = document.getElementsByClassName('widget__show-button')[0]
+			block_widget.insertBefore(element, button_widget)
 			id_add_news.push(data[j].id)
 			i++
 		}
