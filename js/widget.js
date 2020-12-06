@@ -6,7 +6,7 @@ function getData(){
 			{
 				"id": 1,
 				"heading": "Полиция арестовала австралийца, написавшего на пакетике с наркотиками свои данные на случай потери",
-				"author": "tjournal.ru/",
+				"author": "tjournal.ru",
 				"date": "4 сен 2017",
 				"time": "22:48",
 				"link_more": "https://tjournal.ru/flood/59024-policiya-arestovala-avstraliyca-podpisavshego-paketik-s-narkotikami-na-sluchay-poteri",
@@ -133,25 +133,25 @@ function card_news(data){
 	let id = data.id
 
 
-	heading = `<h2>${heading}</h2>`
-	link_more = `<a onclick="data_update(this)" href="${link_more}" target="_blank">${link_text}</a>`
-	date = `<span class="data-n-time__first">${date}</span>`
-	time = `<span class="data-n-time__last">${time}</span>`
-	author = `<span>${author}</span>`
-	readed = `<span>Прочитано: ${(readed ? '<i class="far fa-check-circle"></i>':'<i class="far fa-times-circle"></i>')}</span>`
+	heading = '<h2>'+heading+'</h2>'
+	link_more = '<a onclick="data_update(this)" href="'+link_more+'" target="_blank">'+link_text+'</a>'
+	date = '<span class="data-n-time__first">'+date+'</span>'
+	time = '<span class="data-n-time__last">'+time+'</span>'
+	author = '<span>'+author+'</span>'
+	readed = '<span>Прочитано:'+(readed ? '<i class="far fa-check-circle"></i>':'<i class="far fa-times-circle"></i>')+'</span>'
 
 
-	let date_block = `<div class="widget__block__body__footer__author__data-n-time">${date} в ${time}</div>`
+	let date_block = '<div class="widget__block__body__footer__author__data-n-time">'+date+' в '+time+'</div>'
 	let author_image = '<div class="widget__block__body__footer__author__image"><i class="fas fa-user-circle"></i></div>'
-	let author_block = `<div class="widget__block__body__footer__author">${author_image}<div>${author} ${date_block}</div></div>`
-	let readed_block = `<div class="widget__block__body__footer__readed">${readed}</div>` 
+	let author_block = '<div class="widget__block__body__footer__author">'+author_image+'<div>'+author+date_block+'</div></div>'
+	let readed_block = '<div class="widget__block__body__footer__readed">'+readed+'</div>' 
 
-	let heading_block = `<div class="widget__block__body__head">${heading}</div>`
-	let content_block = `<div class="widget__block__body__content">${link_more}</div>`
-	let footer_card = `<div class="widget__block__body__footer">${author_block} ${readed_block}</div>`
+	let heading_block = '<div class="widget__block__body__head">'+heading+'</div>'
+	let content_block = '<div class="widget__block__body__content">'+link_more+'</div>'
+	let footer_card = '<div class="widget__block__body__footer">'+author_block+readed_block+'</div>'
 	
 	// Полностью готовая карточка
-	let block = `<div id="${id}" class="widget__block__body">${heading_block} ${content_block} ${footer_card}</div>`
+	let block = '<div id="'+id+'" class="widget__block__body">'+heading_block+content_block+footer_card+'</div>'
 
 	return block
 
