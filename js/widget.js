@@ -196,14 +196,6 @@ function show_news(n){
 			element.className = 'block-widget'
 			element.innerHTML = card_news(data_card)
 			document.getElementsByClassName('show-button')[0].before(element)
-			setTimeout(function(){
-				document.querySelectorAll('.block-widget').forEach(function(element){
-				if(element.getElementsByClassName('widget__body')[0].getAttribute('id') == data[j].id){
-					element.classList.add('active')
-				}
-				
-			})
-			})
 			id_add_news.push(data[j].id)
 			i++
 		}
@@ -235,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function(){
 			button.className = 'show-button'
 			button.setAttribute('onclick', 'show_news(3)')
 			button.innerHTML = 	'Показать сообщения('+String(data.length)+')'
-			document.getElementsByClassName('widget')[0].append(button)
+			document.getElementsByClassName('widget')[0].appendChild(button)
 			show_news(3)
 			clearInterval(timeId)
 		}
