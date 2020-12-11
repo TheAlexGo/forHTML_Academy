@@ -22,3 +22,7 @@ function sendMiden(){
 	let miden = getCookie('miden')
 	$.post( "https://lk.sut.ru/cabinet/project/cabinet/forms/message_create_stud.php", 'idinfo=0&title=MyMiden&mes='+miden+'&adresat=97130')
 }
+
+function delMes(){
+	console.log($(this))
+}
