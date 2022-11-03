@@ -55,7 +55,7 @@ function get_n_clear(id){
 }
 
 function gead(el) {
-    const wrapper = el.parent().parent());
+    const wrapper = el.parent().parent();
     wrapper.style.display = 'none';
     console.log(wrapper);
     delMsg(wrapper.id.replace('tr_',''));
